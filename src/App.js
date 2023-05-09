@@ -8,7 +8,7 @@ import KeyGenComponent from "./components/KeyGen";
 class App extends Component {
   state = {
     //Connstring with backend
-    connString: "http://localhost:5000",
+    connString: "https://kryptoprojbe-uzac-main-wuvw6mogda-lz.a.run.app",
     //Encryption
     encMessage: 0,
     encN: 0,
@@ -101,7 +101,17 @@ class App extends Component {
       this.state.keyGenBottom < 3 ||
       this.state.keyGenTop < 5
     ) {
-      console.log("KOK");
+      this.setState({ keyGenBottom: 3 });
+      this.setState({ keyGenTop: 5 });
+      console.log("Not possible!");
+      return;
+    }
+    if (parseInt(this.state.keyGenBottom) > parseInt(this.state.keyGenTop)) {
+      const auxBot = this.state.keyGenBottom;
+      const auxTop = this.state.keyGenTop;
+      this.setState({ keyGenBottom: auxTop });
+      this.setState({ keyGenTop: auxBot });
+      console.log("Not possible!");
       return;
     }
     axios
