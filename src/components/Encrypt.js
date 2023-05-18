@@ -20,7 +20,7 @@ const EncComponent = ({
         <input
           type="number"
           min="0"
-          max="10000"
+          max="500000"
           class="form-control"
           aria-label="Small"
           aria-describedby="inputGroup-sizing-sm"

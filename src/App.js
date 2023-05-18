@@ -67,10 +67,10 @@ class App extends Component {
       this.state.encMessage === 0 ||
       this.state.encN === 0 ||
       this.state.encE === 0 ||
-      this.state.encMessage > 10000
+      this.state.encMessage > 500000
     ) {
-      if (this.state.encMessage > 10000) {
-        this.setState({ encMessage: 10000 });
+      if (this.state.encMessage > 500000) {
+        this.setState({ encMessage: 500000 });
       }
       return;
     }
