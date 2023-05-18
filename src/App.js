@@ -66,8 +66,12 @@ class App extends Component {
     if (
       this.state.encMessage === 0 ||
       this.state.encN === 0 ||
-      this.state.encE === 0
+      this.state.encE === 0 ||
+      this.state.encMessage > 10000
     ) {
+      if (this.state.encMessage > 10000) {
+        this.setState({ encMessage: 10000 });
+      }
       return;
     }
     axios
@@ -123,8 +127,12 @@ class App extends Component {
           keyGenP: res.data["keyGenP"],
           keyGenQ: res.data["keyGenQ"],
           keyGenN: res.data["keyGenN"],
+          encN: res.data["keyGenN"],
+          decN: res.data["keyGenN"],
           keyGenE: res.data["keyGenE"],
+          encE: res.data["keyGenE"],
           keyGenD: res.data["keyGenD"],
+          decD: res.data["keyGenD"],
         });
       });
   };

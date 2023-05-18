@@ -23,6 +23,7 @@ const KeyGenComponent = ({
         <input
           type="number"
           min="3"
+          max="900"
           class="form-control"
           aria-label="Small"
           aria-describedby="inputGroup-sizing-sm"
